@@ -1,0 +1,22 @@
+﻿@model emps.Models.Employee
+
+@{
+    ViewBag.Title = "CreateEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create Employee</h2>
+@using (Html.BeginForm()) { 
+    <fieldset>
+        <legend>Employee</legend>
+        <p>
+            Name:<br />
+            @Html.EditorFor(model => model.Name)
+        </p>
+        <p>
+            Position:<br />
+            @Html.DropDownListFor(model => model.PositionId, ViewBag.positions as SelectList)
+        </p>
+        <input type="submit" value="Create Employee"/>
+    </fieldset>
+}

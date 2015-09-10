@@ -1,0 +1,18 @@
+﻿@model emps.Models.Employee
+
+@{
+    ViewBag.Title = "DeleteEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DeleteEmployee</h2>
+<dl>
+    <dt>Name:</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+</dl>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete Employee" />
+}

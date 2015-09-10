@@ -1,0 +1,30 @@
+﻿@model IEnumerable<emps.Models.Employee>
+
+@{
+    ViewBag.Title = "ListEmployees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListEmployees</h2>
+<p>
+    @Html.ActionLink("Create Employee", "CreateEmployee", null, new { @class = "menuitem" })
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Options</th>
+        </tr>
+
+    </thead>
+    @foreach (var item in Model) { 
+        <tr>
+            <td>@item.Id</td>
+            <td>@Html.ActionLink(item.Name, "EditEmployee", new { item.Id }, new { @class = "menuitem" })</td>
+            <td>@item.Position.Title</td>
+            <td>@Html.ActionLink("Delete", "DeleteEmployee", new { id = item.Id }, new { @class = "menuitem" })</td>
+</tr>
+    }
+</table>

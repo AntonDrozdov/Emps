@@ -1,0 +1,24 @@
+﻿@model IEnumerable<emps.Models.Skill>
+
+@{
+    ViewBag.Title = "ListSkills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListSkills</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+        </tr>
+
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+        </tr>
+    }
+</table>
